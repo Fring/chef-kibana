@@ -6,7 +6,7 @@ default['kibana']['version'] = '4.0.0-linux-x64' # must match version number of 
 
 # Values to use for git method of installation
 default['kibana']['git']['url'] = 'https://github.com/elasticsearch/kibana'
-default['kibana']['git']['branch'] = 'v3.1.2'
+default['kibana']['git']['branch'] = 'v4.1.1'
 default['kibana']['git']['type'] = 'sync' # checkout | sync
 default['kibana']['git']['config'] = 'kibana/config.js' # relative path of config file
 default['kibana']['git']['config_template'] = 'config.js.erb' # template to use for config
@@ -15,7 +15,7 @@ default['kibana']['git']['config_template_cookbook'] = 'kibana_lwrp' # cookbook 
 # Values to use for file method of installation
 default['kibana']['file']['type'] = 'tgz' # zip | tgz
 
-default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-linux-x64.tar.gz'
+default['kibana']['file']['url'] = 'https://download.elasticsearch.org/kibana/kibana/kibana-4.1.1-linux-x64.tar.gz'
 default['kibana']['file']['checksum'] = nil # sha256 ( shasum -a 256 FILENAME )
 default['kibana']['file']['config'] = 'config/kibana.yml' # relative path of config file
 default['kibana']['file']['config_template'] = 'kibana.yml.erb' # template to use for config
