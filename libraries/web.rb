@@ -41,30 +41,30 @@ class Chef
         notifying_block do
           resources = kibana_resources
 
-          case resources[:type]
-          when 'apache'
-            node.set['apache']['default_site_enabled'] = resources[:default_site_enabled]
+          #case resources[:type]
+          #when 'apache'
+          #  node.set['apache']['default_site_enabled'] = resources[:default_site_enabled]
 
-            node.set['apache']['listen_ports'] = Array.new unless resources[:default_site_enabled]
-            node.set['apache']['listen_ports'] << resources[:listen_port]
+          #  node.set['apache']['listen_ports'] = Array.new unless resources[:default_site_enabled]
+          #  node.set['apache']['listen_ports'] << resources[:listen_port]
 
-            %w(apache2 apache2::mod_dir apache2::mod_proxy apache2::mod_proxy_http).each do |recipe|
-              @run_context.include_recipe recipe
-            end
+           # %w(apache2 apache2::mod_dir apache2::mod_proxy apache2::mod_proxy_http).each do |recipe|
+          #    @run_context.include_recipe recipe
+          #  end
 
-            wa = web_app resources[:name] do
-              cookbook resources[:template_cookbook]
-              docroot resources[:docroot]
-              template resources[:template]
-              es_server resources[:es_server]
-              es_port resources[:es_port]
-              server_name resources[:server_name]
-              server_aliases resources[:server_aliases]
-              kibana_dir resources[:docroot]
-              listen_address resources[:listen_address]
-              listen_port resources[:listen_port]
-              es_scheme resources[:es_scheme]
-            end
+          #  wa = web_app resources[:name] do
+          #    cookbook resources[:template_cookbook]
+          #    docroot resources[:docroot]
+          #    template resources[:template]
+          #    es_server resources[:es_server]
+          ##    es_port resources[:es_port]
+          #    server_name resources[:server_name]
+          #    server_aliases resources[:server_aliases]
+          #    kibana_dir resources[:docroot]
+          #    listen_address resources[:listen_address]
+          #    listen_port resources[:listen_port]
+          #    es_scheme resources[:es_scheme]
+          #  end
 
           when 'nginx'
             node.set['nginx']['default_site_enabled'] = resources[:default_site_enabled]
