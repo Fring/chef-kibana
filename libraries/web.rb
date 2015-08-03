@@ -41,7 +41,7 @@ class Chef
         notifying_block do
           resources = kibana_resources
 
-          #case resources[:type]
+          case resources[:type]
           #when 'apache'
           #  node.set['apache']['default_site_enabled'] = resources[:default_site_enabled]
 
