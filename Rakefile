@@ -7,7 +7,7 @@ require 'bundler/setup'
 namespace :style do
   require 'rubocop/rake_task'
   desc 'Run Ruby style checks'
-  RuboCop::RakeTask.new(:rubocop)
+  RuboCop::RakeTask.new(:ruby)
 
   require 'foodcritic'
   desc 'Run Chef style checks'
@@ -15,7 +15,7 @@ namespace :style do
 end
 
 desc 'Run all style checks'
-task style: ['style:chef', 'style:rubocop']
+task style: ['style:chef', 'style:ruby']
 
 require 'kitchen'
 desc 'Run Test Kitchen integration tests'

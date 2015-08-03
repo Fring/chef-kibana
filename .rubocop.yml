@@ -3,7 +3,6 @@ AllCops:
     - 'vendor/**/*'
     - 'test/support/**'
     - 'bin/**/*'
-    - '.kitchen/**/*'
   Include:
     - '**/Rakefile'
     - '**/Gemfile'
